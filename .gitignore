@@ -4,3 +4,6 @@
 ui/node_modules/
 ui/.react-router/
 ui/build/
+
+# server
+server/tmp/

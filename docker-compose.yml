@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: ../Dockerfile.server
+    volumes:
+      - ./server:/app
+    ports:
+      - "8080:8080"
+    networks:
+      - dev
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: ../Dockerfile.ui
+    volumes:
+      - ./ui:/app
+    ports:
+      - "5173:5173" # or 3000 for CRA
+    networks:
+      - dev
+    environment:
+      - CHOKIDAR_USEPOLLING=true # for file watching inside Docker
+    command: npm run dev -- --host 0.0.0.0 # make Vite listen on all interfaces
+
+networks:
+  dev:
+    driver: bridge

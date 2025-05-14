@@ -1,0 +1,11 @@
+FROM golang:1.24.3
+
+WORKDIR /app
+
+# Install Air for hot reload
+RUN go install github.com/air-verse/air@latest
+
+
+COPY . .
+
+CMD ["air"]

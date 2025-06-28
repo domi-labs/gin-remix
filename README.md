@@ -1,4 +1,4 @@
-# Gin Remix
+# Gin Remix / GoTypeScript
 
 Dev Server Template for prototyping/MVPs with [Go](https://go.dev/) as server [React Router/React](https://reactrouter.com/) as ui/client
 
@@ -32,3 +32,4 @@ docker-compose up --build
 - [x] Add gin server
 - [ ] Add DB server
 - [ ] Add redis server
+- [ ] SSE (Server Side Events Setup)
